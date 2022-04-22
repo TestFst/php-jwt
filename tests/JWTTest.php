@@ -1,6 +1,6 @@
 <?php
 
-namespace Firebase\JWT;
+namespace FstNet\JWT;
 
 use ArrayObject;
 use PHPUnit\Framework\TestCase;

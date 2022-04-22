@@ -1,6 +1,6 @@
 <?php
 
-namespace Firebase\JWT;
+namespace FstNet\JWT;
 
 use PHPUnit\Framework\TestCase;
 use InvalidArgumentException;

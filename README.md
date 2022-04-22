@@ -26,8 +26,8 @@ composer require paragonie/sodium_compat
 Example
 -------
 ```php
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use FstNet\JWT\JWT;
+use FstNet\JWT\Key;
 
 $key = "example_key";
 $payload = array(
@@ -68,8 +68,8 @@ $decoded = JWT::decode($jwt, new Key($key, 'HS256'));
 Example with RS256 (openssl)
 ----------------------------
 ```php
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use FstNet\JWT\JWT;
+use FstNet\JWT\Key;
 
 $privateKey = <<<EOD
 -----BEGIN RSA PRIVATE KEY-----
@@ -123,8 +123,8 @@ Example with a passphrase
 -------------------------
 
 ```php
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use FstNet\JWT\JWT;
+use FstNet\JWT\Key;
 
 // Your passphrase
 $passphrase = '[YOUR_PASSPHRASE]';
@@ -159,8 +159,8 @@ echo "Decode:\n" . print_r((array) $decoded, true) . "\n";
 Example with EdDSA (libsodium and Ed25519 signature)
 ----------------------------
 ```php
-use Firebase\JWT\JWT;
-use Firebase\JWT\Key;
+use FstNet\JWT\JWT;
+use FstNet\JWT\Key;
 
 // Public and private keys are expected to be Base64 encoded. The last
 // non-empty line is used so that keys can be generated with
@@ -191,14 +191,14 @@ Using JWKs
 ----------
 
 ```php
-use Firebase\JWT\JWK;
-use Firebase\JWT\JWT;
+use FstNet\JWT\JWK;
+use FstNet\JWT\JWT;
 
 // Set of keys. The "keys" key is required. For example, the JSON response to
 // this endpoint: https://www.gstatic.com/iap/verify/public_key-jwk
 $jwks = ['keys' => []];
 
-// JWK::parseKeySet($jwks) returns an associative array of **kid** to Firebase\JWT\Key
+// JWK::parseKeySet($jwks) returns an associative array of **kid** to FstNet\JWT\Key
 // objects. Pass this as the second parameter to JWT::decode.
 JWT::decode($payload, JWK::parseKeySet($jwks));
 ```
@@ -265,7 +265,7 @@ Changelog
 
 #### 3.0.0 / 2015-07-22
 - Minimum PHP version updated from `5.2.0` to `5.3.0`.
-- Add `\Firebase\JWT` namespace. See
+- Add `\FstNet\JWT` namespace. See
 [#59](https://github.com/firebase/php-jwt/pull/59) for details. Thanks to
 [@Dashron](https://github.com/Dashron)!
 - Require a non-empty key to decode and verify a JWT. See

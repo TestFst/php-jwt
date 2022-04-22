@@ -1,6 +1,6 @@
 <?php
 
-namespace Firebase\JWT;
+namespace FstNet\JWT;
 
 use ArrayAccess;
 use DomainException;
@@ -428,8 +428,8 @@ class JWT
         foreach ($keyOrKeyArray as $keyId => $key) {
             if (!$key instanceof Key) {
                 throw new TypeError(
-                    '$keyOrKeyArray must be an instance of Firebase\JWT\Key key or an '
-                    . 'array of Firebase\JWT\Key keys'
+                    '$keyOrKeyArray must be an instance of FstNet\JWT\Key key or an '
+                    . 'array of FstNet\JWT\Key keys'
                 );
             }
         }
